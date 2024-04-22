@@ -1,0 +1,43 @@
+header{
+    background: linear-gradient(0, #969595, #e9e2dd);
+    height: 250px;
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+.shopee-mail>img{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    width: 400px;
+}
+.header__logo-link {
+    text-decoration: none;
+    color: transparent;
+}
+.header__logo-shopee {
+    width: 150px;
+    position: absolute;
+    color: rgb(7, 133, 244);
+    left: 80px;
+    top: 100px;
+}
+nav{
+    background-color: yellow;
+    height: 50px;
+    color: rgb(0, 0, 0);
+}
+article{
+    background-color: gray;
+    height: 100px;
+    color: rgb(0, 0, 0);
+}
+aside{
+    background-color: aqua;
+    height: 100px;
+    color: rgb(0, 0, 0);
+}
+footer{
+    background-color: burlywood;
+    height: 100px;
+    color: rgb(0, 0, 0);
+}

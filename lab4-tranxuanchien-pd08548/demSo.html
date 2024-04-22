@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>demSo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <h1 ng-mousemove="count = count +1">Đưa chuột vào đây</h1>
+        <h2>{{count}}</h2>
+        <script>
+            var app = angular.module("myapp", []);
+            app.controller("myctrl", function ($scope) {
+                $scope.count = 0;
+            });
+        </script>
+    </div>
+</body>
+</html>

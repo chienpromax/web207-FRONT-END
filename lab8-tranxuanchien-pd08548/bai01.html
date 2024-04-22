@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 01</title>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-app="myapp">
+        <header>
+            <h1>SINGLE PAGE APPLICATION</h1>
+        </header>
+        <hr>
+        <nav>
+            <a href="#!">Home </a> |
+            <a href="#about">About us </a> |
+            <a href="#contact">Cotact us </a> |
+        </nav>
+        <hr>
+        <article>
+            <div ng-show="loading" class="pull-right label lable-info">Loading...</div>
+            <ng-view></ng-view>
+        </article>
+        <hr>
+        <footer>
+            FPT Polytechnic &copy; 2017. All rights reserved
+        </footer>
+    </div>
+    <script>
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "bai1/trangchu.html"
+                })
+                .when("/about", {
+                    templateUrl: "bai1/gioithieu.html"
+                })
+                .when("/contact", {
+                    templateUrl: "bai1/lienhe.html"
+                })
+        })
+        app.run(function ($rootScope) {
+            $rootScope.$on("$routeChangeStart", function () {
+                $rootScope.loading = true;
+            })
+            $rootScope.$on("$routeChangeSuccess", function () {
+                $rootScope.loading = false;
+            })
+            $rootScope.$on("$routeChangeError", function () {
+                $rootScope.loading = false;
+                alert("Không tải được template");
+            })
+        })
+    </script>
+</body>
+
+</html>

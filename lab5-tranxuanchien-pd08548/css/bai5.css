@@ -1,0 +1,14 @@
+.poly-prod{
+    height: 150px;
+    max-width: 95%;
+}
+.panel{
+    margin-bottom: 30px;
+    border: 1px solid blue;
+}
+.panel-heading{
+    background-color: aqua;
+}
+.panel-footer{
+    background-color: bisque;
+}

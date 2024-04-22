@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Mall</title>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Poly -->
+    <link href="css/poly.css" rel="stylesheet" />
+
+    <!-- Angular -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-app="myapp">
+        <header class="row">
+            <div class="shopping-mall">
+                <h1>Online shopping mall</h1>
+                <h5>The center point of the professional programming</h5>
+            </div>
+            <img class="pull-right" src="images/header-object.png" />
+        </header>
+        <nav class="row">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!--Menu-->
+                    <ul class="nav navbar-nav">
+                        <li><a href="#shome"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+                        <li><a href="#about"><span class="glyphicon glyphicon-th-list"></span> Giới thiệu</a></li>
+                        <li><a href="#contact"><span class="glyphicon glyphicon-earphone"></span> Liên hệ</a></li>
+                        <li><a href="#feedback"><span class="glyphicon glyphicon-envelope"></span> Góp ý</a></li>
+                        <li><a href="#faq"><span class="glyphicon glyphicon-question-sign"></span> Hỏi đáp</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                    class="glyphicon glyphicon-user"></span> Tài khoản <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#login">Đăng nhập</a></li>
+                                <li><a href="#forgot">Quên mật khẩu</a></li>
+                                <li><a href="#register">Đăng ký thành viên</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#logoff">Đăng xuất</a></li>
+                                <li><a href="#change">Đổi mật khẩu</a></li>
+                                <li><a href="#profile">Cập nhật hồ sơ</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#orders">Đơn hàng</a></li>
+                                <li><a href="#products">Hàng đã mua</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">English</a></li>
+                        <li><a href="">Tiếng Việt</a></li>
+                    </ul>
+                    <!--Menu-->
+                </div>
+            </div>
+        </nav>
+        <div class="poly-sheet row">
+
+            <article class="col-sm-9">
+                <!--Nội dung trang web-->
+                <div class="pull-right label lable-info" ng-show="loading">Loading...</div>
+                <ng-view></ng-view>
+            </article>
+
+            <aside class="col-sm-3">
+                <!--CartInfo-->
+                <div class="poly-cart">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img class="col-sm-5" src="images/shoppingcart.gif" />
+                            <ul class="col-sm-7">
+                                <li>100 items</li>
+                                <li>$ 56.8</li>
+                                <li><a href="">View Cart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--/CartInfo-->
+
+                <!--Search-->
+                <div class="nn-cart">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form method="post" action="/Product/Search">
+                                <input placeholder="Keywords" name="Keywords" class="form-control" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--/Search-->
+
+                <div class="panel-group" id="accordion">
+                    <style>
+                        #accordion .panel-heading {
+                            cursor: pointer;
+                        }
+                    </style>
+                    <!--Category-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <span class="glyphicon glyphicon-th-list"></span>
+                            <strong>Chủng loại</strong>
+                        </div>
+                        <div id="collapseOne" class="list-group panel-collapse collapse in">
+                            <a href="#category/Điện thoai di động" class="list-group-item">Điện thoại di động</a>
+                            <a href="#category/laptop" class="list-group-item">Máy tính xách tay</a>
+                            <a href="#category/PC" class="list-group-item">Máy tính để bàn</a>
+                            <a href="#category/fan" class="list-group-item">Quạt máy</a>
+                            <a href="#category/TV" class="list-group-item">Tivi</a>
+                            <a href="#category/tủ lạnh" class="list-group-item">Tủ lạnh</a>
+                        </div>
+                    </div>
+                    <!--/Category-->
+
+                    <!--Supplier-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <strong>Nhà cung cấp</strong>
+                        </div>
+                        <div id="collapseTwo" class="list-group panel-collapse collapse">
+                            <a href="#supplier/apple" class="list-group-item">Apple</a>
+                            <a href="#supplier/samsung" class="list-group-item">Samsung</a>
+                            <a href="#supplier/nokia" class="list-group-item">Nokia</a>
+                            <a href="#supplier/LG" class="list-group-item">LG</a>
+                            <a href="#supplier/sony" class="list-group-item">Sony Ericson</a>
+                            <a href="#supplier/dell" class="list-group-item">Dell</a>
+                            <a href="#supplier/acer" class="list-group-item">Acer</a>
+                            <a href="#supplier/HP" class="list-group-item">HP</a>
+                            <a href="#supplier/toshiba" class="list-group-item">Toshiba</a>
+                        </div>
+                    </div>
+
+                    <!--/Supplier-->
+                    
+                    <!--Special-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion"
+                            href="#collapseThree">
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <strong>Hàng đặc biệt</strong>
+                        </div>
+                        <div id="collapseThree" class="list-group panel-collapse collapse">
+                            <a href="#special/best" class="list-group-item">Hàng bán chạy</a>
+                            <a href="#special/latest" class="list-group-item">Hàng mới</a>
+                            <a href="#special/discount" class="list-group-item">Hàng giảm giá</a>
+                            <a href="#special/special" class="list-group-item">Hàng đặc biệt</a>
+                            <a href="#special/views" class="list-group-item">Hàng xem nhiều</a>
+                        </div>
+                    </div>
+                    <!--/Special-->
+                </div>
+
+            </aside>
+        </div>
+
+        <footer class="panel panel-default row">
+            <div class="panel-heading text-center">
+                <p>FPT Polytechnic &copy; 2017. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

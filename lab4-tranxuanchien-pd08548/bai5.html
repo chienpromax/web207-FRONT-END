@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bai5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bai4.css">
+</head>
+
+<body ng-app="myapp">
+    <div class="container">
+        <div ng-controller="myctrl">
+            <form action="">
+                <div class="form-group">
+                    <label for="">họ và tên</label>
+                    <input type="text" class="form-control" ng-model="student.ten">
+                </div>
+                <div class="form-group">
+                    <label for="">Ngày sinh</label>
+                    <input type="text" class="form-control" ng-model="student.date">
+                </div>
+                <div class="form-group">
+                    <label for="">giới tính</label>
+                    <select ng-model="student.sex" class="form-control alert-info">
+                        <option value="nam">nam</option>
+                        <option value="nữ">nữ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">điểm</label>
+                    <input type="text" class="form-control" ng-model="student.poin">
+                </div>
+                <div class="form-group">
+                    <label for="">học lực</label>
+                    <input type="text" class="form-control" ng-model="student.grade" readonly>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <button type="button" class="btn btn-default" ng-click="save()">lưu</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            angular.module("myapp", []).controller("myctrl", function ($scope) {
+                $scope.student = {};
+                $scope.save = function () {
+                    var a = parseFloat($scope.student.poin);
+                    if (a<0 || a>10) {
+                        $scope.student.grade = "điểm trong khoản 0 -> 10";
+                    } else if(a >= 5) {
+                        $scope.student.grade = "đạt";
+                    }else{
+                        $scope.student.grade = "rớt";
+                    }
+                };
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+.panel-tille{
+    background-color: rgb(227, 227, 227);
+    height: 35px;
+    padding:0 10px 0 10px;
+}
+.panel-tille>h3>i{
+    margin:0 10px 0 10px;
+}
+.panel-body{
+    border: 1px solid rgb(158, 158, 158);
+    padding: 10px;
+}
+label{
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+button{
+    margin: 10px;
+    border-radius: 10px;
+    width: 100px;
+}
+button>i{
+    margin-right: 10px;
+}
+.panel-footer{
+    background-color: rgb(228, 228, 228);
+    height: 25px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding:0 10px 0 10px;
+}

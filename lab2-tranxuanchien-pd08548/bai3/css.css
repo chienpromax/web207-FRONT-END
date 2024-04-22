@@ -1,0 +1,28 @@
+.panel-tille{
+    background-color: rgb(218, 218, 218);
+    height: 40px;
+    padding:0 10px 0 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 1px solid black;
+}
+.panel-body{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.panel-footer{
+    background-color: rgb(228, 228, 228);
+    border: 1px solid black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding:0 10px 0 10px;
+}
+.input-group{
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 0 5px 0 5px;
+}

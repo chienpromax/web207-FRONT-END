@@ -1,0 +1,60 @@
+/*--HEADER--*/
+
+header{
+    position:relative;
+    height:200px;
+}
+
+.shopping-mall{
+    position:absolute;
+    bottom:20px;
+    font-variant:small-caps;
+}
+
+.shopping-mall>h1{
+    font-family:Impact;
+    font-size:50px;
+    color:white;
+    letter-spacing: 0.3px;
+    text-shadow:0 0 2px black;
+    padding-bottom:0px;
+    border-bottom:1px dotted gray;
+    margin:0px;
+}
+.shopping-mall>h5{
+	margin-top:5px;
+    letter-spacing: 0.5px;
+}
+
+/*--BODY--*/
+
+.poly-sheet{
+    box-shadow:0 0 1px lightgray;
+    border-radius:5px;
+    padding:5px;
+    position:relative;
+    top:-10px;
+}
+
+.poly-sheet > article.col-sm-9, .poly-sheet > aside.col-sm-3{
+	padding: 5px;
+}
+
+/*--ASIDE BOX--*/
+
+.poly-cart{
+	margin-top: 5px;
+}
+
+.poly-cart ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-variant: small-caps;
+}
+
+.panel-heading strong{
+	font-variant: small-caps;
+	font-size: larger;
+	text-shadow:0 0 2px darkgray;
+}

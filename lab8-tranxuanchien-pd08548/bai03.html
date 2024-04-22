@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 03</title>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-app="myapp">
+        <header ng-include="'bai3/header.html'"> </header>
+        <hr>
+        <nav ng-include="'bai3/menu.html'"> </nav>
+        <hr>
+        <article>
+            <div class="pull-right label lable-info" ng-show="loading">Loading...</div>
+            <ng-view></ng-view>
+        </article>
+        <hr>
+        <footer ng-include="'bai3/footer.html'"></footer>
+    </div>
+    <script>
+        var app = angular.module("myapp", ["ngRoute"]);
+
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/home", {
+                    templateUrl: "bai1/trangchu.html"
+                })
+                .when("/about", {
+                    templateUrl: "bai1/gioithieu.html"
+                })
+                .when("/contact", {
+                    templateUrl: "bai1/lienhe.html"
+                })
+                .otherwise({
+                    redirectTo: "/home"
+                })
+        })
+
+        app.run(function ($rootScope) {
+            $rootScope.$on("$routeChangeStart", function () {
+                $rootScope.loading = true;
+            })
+            $rootScope.$on("$routeChangeSuccess", function () {
+                $rootScope.loading = false;
+            })
+            $rootScope.$on("$routeChangeError", function () {
+                $rootScope.loading = false;
+                alert("Không tải được template");
+            })
+        })
+    </script>
+</body>
+
+</html>

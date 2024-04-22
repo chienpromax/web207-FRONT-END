@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css1.css">
+    <title>bai3</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="capNhat-tab" data-toggle="tab" href="#capNhat" role="tab"
+                    aria-controls="capNhat" aria-selected="true"><i class="fa-regular fa-clipboard"></i> Cập nhật</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="danhSach-tab" data-toggle="tab" href="#danhSach" role="tab"
+                    aria-controls="danhSach" aria-selected="false"><i class="fa-solid fa-list"></i> Danh sách</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="capNhat" role="tabpanel" aria-labelledby="capNhat-tab">
+                <div class="panel panel-default">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <td colspan="5" class="table-secondary">
+                                <h4><i class="fa-solid fa-list"></i> Bảng lương tháng 12</h4>
+                            </td>
+                        </tr>
+                        <tr class="table-warning text-center">
+                            <th rowspan="2">Mã nhân viên</th>
+                            <th rowspan="2">Họ tên</th>
+                            <th colspan="3">Thu nhập</th>
+                        </tr>
+                        <tr class="table-warning text-center">
+                            <th>Lương</th>
+                            <th>Thưởng</th>
+                            <th>Phụ cấp</th>
+                        </tr>
+                        <tr>
+                            <td>NV100</td>
+                            <td>Trần xuân chiến</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>NV100</td>
+                            <td>Trần xuân chiến</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>NV100</td>
+                            <td>Trần xuân chiến</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td class="table-secondary" colspan="5">
+                                <p>Lương của cầu thủ và huấn luện viên chuyên nghiệp</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="danhSach" role="tabpanel" aria-labelledby="danhSach-tab">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-tille">
+                            <h4><i class="fa-regular fa-clipboard"></i> Nhập lương tháng 12</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="">Mã nhân viên</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="">Họ và tên</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="clubSelect" id="clubSelect">Câu lạc bộ</label>
+                                    <select class="form-control">
+                                        <option value="club1">Gia lai</option>
+                                        <option value="club2">Đầ nẵng</option>
+                                        <option value="club3">HCM</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="">Lương</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">$</div>
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-addon">.00</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="">Thưởng</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">$</div>
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-addon">.00</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="">Phụ cấp</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">$</div>
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-addon">.00</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label for="">Ghi chú</label>
+                                    <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <button><i class="fa-solid fa-download"></i> Lưu</button>
+                                    <button><i class="fa-solid fa-xmark"></i> Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <h5>Vui lòng nhập thông tin cầu thủ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

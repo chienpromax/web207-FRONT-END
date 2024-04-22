@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bai1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <img style="width: 330px;" src="img/{{photo}}" alt="">
+        <ul>
+            <li>Họ và tên: {{name}}</li>
+            <li>Ngày sinh: {{birthday}}</li>
+            <li>Giới tính: {{gender}}</li>
+            <li>Điểm: {{point}}</li>
+        </ul>
+    </div>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.name = "trần xuân chiến";
+            $scope.birthday = "20-02-2004";
+            $scope.gender = "nam";
+            $scope.photo = "nhan_vien.jpg";
+            $scope.point = 10;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller="myctrl">
+        <img src="img/{{img}}" alt="">
+        <h2>{{text}}</h2>
+        <hr>
+    </div>
+    <div ng-controller="myctr2">
+        <input type="number" ng-model="num1" placeholder="nhập số">
+        <input type="number" ng-model="num2" placeholder="nhập số">
+        <button ng-click="sum()">hiển thị</button>
+        <hr>
+        {{sumt}}
+    </div>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.img = "nhan_vien.jpg";
+            $scope.text = "hello";
+        });
+        app.controller("myctr2", function ($scope) {
+            $scope.sum = function () {
+                $scope.sumt = 'tổng ' + ($scope.num1 + $scope.num2);
+            };
+        });
+    </script>
+</body>
+
+</html>
